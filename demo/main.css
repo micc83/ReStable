@@ -1,0 +1,19 @@
+body { font-family: "Helvetica Neue"; }
+.container {margin: 0 auto;width: 90%;padding: 0 5% 20px 5%;max-width: 960px;}
+
+a { text-decoration: none;color: #4988C6; }
+p {color: #444;}
+h1 span {color: #ddd;font-size: 26px;}
+
+.title {font-weight: 800;font-size: 12px;text-transform: uppercase;padding: 15px 0;display: block;}
+pre {background-color: #fafafa;padding: 20px;overflow: auto;border: 1px solid #f1f1f1;color: #000;}
+.note {color: #999;font-size: 14px;}
+.download_button {padding: 15px 0;background: #F2F2F2;display: block;margin: 30px auto;width: 100%;max-width: 200px;text-align: center;color: #4988C6;text-decoration: none;font-weight: 800;font-size: 12px;border-bottom: 3px solid #ddd;}
+.download_button:active {position: relative;top: 3px;border-bottom: 0;}
+.download_button:hover {background-color: #eaeaea;}
+
+table {width: 100%;text-align: center;border: 0;border-collapse: collapse;border-spacing: 0;font-size: 14px;}
+table td {padding: 10px;margin: 0;}
+table thead {background-color: #bbb;color: #fff;font-weight: 800;}
+table tbody tr td{border-bottom: 1px solid #eee;}
+table tbody tr:hover td{background-color: #eee;}

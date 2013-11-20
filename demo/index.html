@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        
+        <title>jQuery ReStable - Responsive tables to list jquery plugin</title>
+        <meta name="description" content="jQuery ReStable is a very simple and lightweight (~1Kb) jQuery plugin that makes table responsive making them collapse into ul lists.">
+        <link rel="stylesheet" href="main.css">
+        <link rel="stylesheet" href="jquery.restable.css">
+        <script src="http://code.jquery.com/jquery-latest.js"></script>
+        <script type="text/javascript" src="../jquery.restable.js"></script>
+        <link rel="stylesheet" href="../jquery.restable.css">
+        <script>
+        $(window).ready(function () {
+            $('#table1').ReStable();
+            $('#table2').ReStable({rowHeaders:false});
+        });
+        </script>
+    </head>
+    <body>
+		
+		<div class="container">
+		
+			<h1>jQuery ReStable <span>v0.1.0</span></h1>
+			
+			<p><strong>jQuery ReStable</strong> is a very simple and lightweight (~1Kb) jQuery plugin that make tables responsive making them collapse into ul lists.</p>
+			
+			<a href="" class="download_button">Download it on GitHub</a>
+			
+			<p>To use it you just have to include jQuery and a copy of the plugin in your head or footer:</p>
+			<pre>&#x3C;script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"&#x3E;&#x3C;/script&#x3E;
+&#x3C;script type="text/javascript" src="jquery.restable.min.js"&#x3E;&#x3C;/script&#x3E;
+&#x3C;link rel="stylesheet" href="jquery.restable.css"&#x3E;</pre>
+
+			<p>Let's say this is your table:</p>
+			
+			<pre>&lt;table class="mytable"&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Period&lt;/td&gt;
+            &lt;td&gt;Full Board&lt;/td&gt;
+            &lt;td&gt;Half Board&lt;/td&gt;
+            &lt;td&gt;Bed and Breakfast&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;01/10/12 - 02/10/12&lt;/td&gt;
+            &lt;td&gt;20 €&lt;/td&gt;
+            &lt;td&gt;30 €&lt;/td&gt;
+            &lt;td&gt;40 €&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;03/10/12 - 04/10/12&lt;/td&gt;
+            &lt;td&gt;40 €&lt;/td&gt;
+            &lt;td&gt;50 €&lt;/td&gt;
+            &lt;td&gt;60 €&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;05/10/12 - 06/10/12&lt;/td&gt;
+            &lt;td&gt;70 €&lt;/td&gt;
+            &lt;td&gt;80 €&lt;/td&gt;
+            &lt;td&gt;90 €&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;</pre>
+			
+			<p>Now the only thing to do is to trigger the menu with:</p>
+			
+			<pre>$(window).ready(function () {
+    $.ReStable();
+});</pre>
+
+			<p>This will target automatically all the tables in the page but you can, off course, target one or more elements with:</p>
+
+			<pre>$(window).ready(function () {
+    $('.mytable').ReStable();
+});</pre>
+			<p>If you need more control here's the plugin settings:</p>
+			        <pre>$('.toresponsive').ReSmenu({
+    rowHeaders: true, // Table has row headers?
+    maxWidth: 480 // Size to which the table become responsive
+});</pre>
+			
+			<h2>Some examples</h2>
+			
+	        <span class="title">Example A - Responsive Pricelist Table (with row headers)</span>
+	        
+	        <table id="table1">
+	            <thead>
+	                <tr>
+	                    <td>Period</td>
+	                    <td>Full Board</td>
+	                    <td>Half Board</td>
+	                    <td>Bed and Breakfast</td>
+	                </tr>
+	            </thead>
+	            <tbody>
+	                <tr>
+	                    <td>01/10/12 - 02/10/12</td>
+	                    <td>20 €</td>
+	                    <td>30 €</td>
+	                    <td>40 €</td>
+	                </tr>
+	                <tr>
+	                    <td>03/10/12 - 04/10/12</td>
+	                    <td>40 €</td>
+	                    <td>50 €</td>
+	                    <td>60 €</td>
+	                </tr>
+	                <tr>
+	                    <td>05/10/12 - 06/10/12</td>
+	                    <td>70 €</td>
+	                    <td>80 €</td>
+	                    <td>90 €</td>
+	                </tr>
+	            </tbody>
+	        </table>
+	        
+	        <pre>$('#table1').ReStable();</pre>
+	        
+	        <span class="title">Example B - Responsive Columns Table (without row headers)</span>
+	        
+	        <table id="table2">
+	            <thead>
+	                <tr>
+	                    <td>Carbon</td>
+	                    <td>Hydrogen</td>
+	                    <td>Nitrogen</td>
+	                    <td>Oxygen</td>
+	                </tr>
+	            </thead>
+	            <tbody>
+	                <tr>
+	                    <td>10</td>
+	                    <td>15</td>
+	                    <td>1</td>
+	                    <td>0</td>
+	                </tr>
+	                <tr>
+	                    <td>8</td>
+	                    <td>11</td>
+	                    <td>1</td>
+	                    <td>2</td>
+	                </tr>
+	                <tr>
+	                    <td>10</td>
+	                    <td>15</td>
+	                    <td>1</td>
+	                    <td>1</td>
+	                </tr>
+	                <tr>
+	                    <td>12</td>
+	                    <td>17</td>
+	                    <td>1</td>
+	                    <td>1</td>
+	                </tr>
+	                <tr>
+	                    <td>14</td>
+	                    <td>19</td>
+	                    <td>1</td>
+	                    <td>2</td>
+	                </tr>
+	            </tbody>
+	        </table>
+			
+			<pre>$('#table2').ReStable({
+    rowHeaders : false
+});</pre>
+
+			<h2>Credits and contacts</h2>
+			        
+			<p><strong>ReStable</strong> has been made by <a href="http://codeb.it" target="_blank">me</a>. You can contact me at <a href="mailto:micc83@gmail.com">micc83@gmail.com</a> or <a href="https://twitter.com/Micc1983" target="_blank">twitter</a> for any issue or feauture request.</p>
+			        
+		
+		</div>
+		
+    </body>
+</html>
