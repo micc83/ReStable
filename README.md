@@ -42,7 +42,7 @@ Let's say this is your table:
         </tbody>
     </table>
     
-Now the only thing to do is to trigger the menu with:
+Now the only thing to do is to trigger the action with:
 
     $(window).ready(function () {
         $.ReStable();
