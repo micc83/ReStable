@@ -56,11 +56,11 @@ This will target automatically all the tables in the page but you can, off cours
 
 If you need more control here's the plugin settings:
 
-    $('.toresponsive').ReSmenu({
+    $('.mytable').ReStable({
         rowHeaders: true, // Table has row headers?
         maxWidth: 480 // Size to which the table become responsive
     });
     
 ## Credits and contacts
 
-ReSmenu has been made by [me](http://codeb.it). You can contact me at micc83@gmail.com or [twitter](https://twitter.com/Micc1983) for any issue or feauture request.
+ReStable has been made by [me](http://codeb.it). You can contact me at micc83@gmail.com or [twitter](https://twitter.com/Micc1983) for any issue or feauture request.
