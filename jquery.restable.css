@@ -4,7 +4,11 @@ ul.tabletolist {
 }
 /* Table with no row headers */
 ul.tabletolist.nrh {
-    text-align: center;
+	border-bottom: 2px solid #ddd;resize
+}
+/* Table with no row headers columns */
+ul.tabletolist.nrh > li  {
+    border-top: 2px solid #ddd;
 }
 /* Table defaults */
 ul.tabletolist, ul.tabletolist ul {

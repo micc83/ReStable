@@ -37,18 +37,19 @@
 
                     index++;
 
-                    if (!$result[value]) {
-                        $result[value] = {};
-                    }
                     if (s.rowHeaders) {
+                    	if (!$result[value]) { $result[value] = {}; }
                         $result[value][$row.children('td:nth-child(1)').text()] = $row.children('td:nth-child(' + (index + 1) + ')').text();
                     } else {
-                        $result[value][$row_number] = $row.children('td:nth-child(' + index + ')').text();
+                    	if (!$result[$row_number]) { $result[$row_number] = {}; }
+                        $result[$row_number][value] = $row.children('td:nth-child(' + index + ')').text();
                     }
 
                 });
 
             });
+            
+            console.log($result);
 
             // Crea la lista
             $list = $('<ul/>', {
@@ -56,17 +57,17 @@
                 id: 'tabletolist' + i
             }).insertBefore($(element));
             $.each($result, function (index, value) {
-
+				
                 var $myrow = $('<li/>', {
-                    html: '<span class="titles">' + index + '</span>'
+                    html: (s.rowHeaders)? '<span class="titles">' + index + '</span>' : ''
                 }).appendTo($list);
 
                 var $myrowul = $('<ul/>').appendTo($myrow);
 
                 $.each(value, function (index, value) {
-
+					
                     $('<li/>', {
-                        html: (s.rowHeaders) ? '<span class="row_headers">' + index + '</span> <span class="row_data">' + value + '</span>' : value
+                        html: '<span class="row_headers">' + index + '</span> <span class="row_data">' + value + '</span>'
                     }).appendTo($myrowul);
 
                 });
