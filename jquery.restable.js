@@ -1,5 +1,7 @@
-/*! ReStable v0.1 by Alessandro Benoit */
+/*! ReStable v0.1.1 by Alessandro Benoit */
 (function ($, window, i) {
+
+    'use strict';
 
     $.fn.ReStable = function (options) {
 
@@ -14,7 +16,7 @@
 
             var $cols = [],
                 $result = {},
-                $cols_header = $(element).find('tr').first().children('td'),
+                $cols_header = $(element).find('tr').first().children('td,th'),
                 $row_number = 0,
                 $list;
 
@@ -31,25 +33,23 @@
             $(element).find('tr').slice(1).each(function () {
 
                 var $row = $(this);
-                $row_number++;
+                $row_number += 1;
 
                 $.each($cols, function (index, value) {
 
-                    index++;
+                    index += 1;
 
                     if (s.rowHeaders) {
-                    	if (!$result[value]) { $result[value] = {}; }
+                        if (!$result[value]) { $result[value] = {}; }
                         $result[value][$row.children('td:nth-child(1)').text()] = $row.children('td:nth-child(' + (index + 1) + ')').text();
                     } else {
-                    	if (!$result[$row_number]) { $result[$row_number] = {}; }
+                        if (!$result[$row_number]) { $result[$row_number] = {}; }
                         $result[$row_number][value] = $row.children('td:nth-child(' + index + ')').text();
                     }
 
                 });
 
             });
-            
-            console.log($result);
 
             // Crea la lista
             $list = $('<ul/>', {
@@ -57,15 +57,14 @@
                 id: 'tabletolist' + i
             }).insertBefore($(element));
             $.each($result, function (index, value) {
-				
-                var $myrow = $('<li/>', {
-                    html: (s.rowHeaders)? '<span class="titles">' + index + '</span>' : ''
-                }).appendTo($list);
 
-                var $myrowul = $('<ul/>').appendTo($myrow);
+                var $myrow = $('<li/>', {
+                    html: (s.rowHeaders) ? '<span class="titles">' + index + '</span>' : ''
+                }).appendTo($list),
+                    $myrowul = $('<ul/>').appendTo($myrow);
 
                 $.each(value, function (index, value) {
-					
+
                     $('<li/>', {
                         html: '<span class="row_headers">' + index + '</span> <span class="row_data">' + value + '</span>'
                     }).appendTo($myrowul);
@@ -84,12 +83,12 @@
             var element = $(this),
                 responsive_table;
 
-            i++;
+            i += 1;
 
             // The responsive menu is built if the page size is or goes under maxWidth
             function handle_table() {
 
-                if ($(window).width() > parseInt(s.maxWidth)) {
+                if ($(window).width() > parseInt(s.maxWidth, 10)) {
 
                     $(element).show();
 
