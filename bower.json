@@ -1,0 +1,20 @@
+{
+    "name": "ReStable",
+    "version": "0.1.1",
+    "description": "jQuery plugin that make tables responsive",
+    "keywords": [
+        "table",
+        "responsive"
+    ],
+    "main": [
+        "jquery.restable.min.js",
+        "jquery.restable.min.css"
+    ],
+    "ignore": [
+      "demo"
+    ],
+    "dependencies": {
+        "jquery": ">=1.6.4"
+    },
+    "license": "MIT"
+}
