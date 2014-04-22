@@ -4,7 +4,7 @@ ul.tabletolist {
 }
 /* Table with no row headers */
 ul.tabletolist.nrh {
-	border-bottom: 2px solid #ddd;resize
+	border-bottom: 2px solid #ddd;
 }
 /* Table with no row headers columns */
 ul.tabletolist.nrh > li  {
