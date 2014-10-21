@@ -2,7 +2,7 @@ body { font-family: "Helvetica Neue"; }
 .container {margin: 0 auto;width: 90%;padding: 0 5% 20px 5%;max-width: 960px;}
 
 a { text-decoration: none;color: #4988C6; }
-p {color: #444;}
+p, ul {color: #444;}
 h1 span {color: #ddd;font-size: 26px;}
 
 .title {font-weight: 800;font-size: 12px;text-transform: uppercase;padding: 15px 0;display: block;}
@@ -17,3 +17,4 @@ table td, table th {padding: 10px;margin: 0;}
 table thead {background-color: #bbb;color: #fff;font-weight: 800;}
 table tbody tr td{border-bottom: 1px solid #eee;}
 table tbody tr:hover td{background-color: #eee;}
+table img {max-width: 100px;}
