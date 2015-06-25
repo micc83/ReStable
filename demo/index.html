@@ -1,43 +1,47 @@
 <!DOCTYPE html>
 <html>
 
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-        
-        <title>jQuery ReStable - Responsive tables to list jquery plugin</title>
-        <meta name="description" content="jQuery ReStable is a very simple and lightweight (~1Kb) jQuery plugin that makes table responsive making them collapse into ul lists.">
-        <link rel="stylesheet" href="main.css">
-        <script src="http://code.jquery.com/jquery-latest.js"></script>
-        <script type="text/javascript" src="../jquery.restable.js"></script>
-        <link rel="stylesheet" href="../jquery.restable.css">
-        <script>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <title>jQuery ReStable - Responsive tables to list jquery plugin</title>
+    <meta name="description"
+          content="jQuery ReStable is a very simple and lightweight (~1Kb) jQuery plugin that makes table responsive making them collapse into ul lists.">
+    <link rel="stylesheet" href="main.css">
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/github.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script type="text/javascript" src="../jquery.restable.min.js"></script>
+    <link rel="stylesheet" href="../jquery.restable.min.css">
+    <script>
         $(window).ready(function () {
             $('#table1').ReStable();
-            $('#table2').ReStable({rowHeaders:false});
-            $('#table3').ReStable({keepHtml : true,rowHeaders : false});
-            $('#table4').ReStable({keepHtml : true,rowHeaders : false});
+            $('#table2').ReStable({rowHeaders: false});
+            $('#table3').ReStable({keepHtml: true, rowHeaders: false});
         });
-        </script>
-    </head>
-    <body>
-        
-        <div class="container">
-        
-            <h1>jQuery ReStable <span>v0.1.1</span></h1>
-            
-            <p><strong>jQuery ReStable</strong> is a very simple and lightweight (~1Kb) jQuery plugin that make tables responsive making them collapse into ul lists.</p>
-            
-            <a href="https://github.com/micc83/ReStable" class="download_button">Download it on GitHub</a>
-            
-            <p>To use it you just have to include jQuery and a copy of the plugin in your head or footer:</p>
-            <pre>&#x3C;script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"&#x3E;&#x3C;/script&#x3E;
-&#x3C;script type="text/javascript" src="jquery.restable.min.js"&#x3E;&#x3C;/script&#x3E;
-&#x3C;link rel="stylesheet" href="jquery.restable.min.css"&#x3E;</pre>
+    </script>
+</head>
+<body>
 
-            <p>Let's say this is your table:</p>
+<div class="container">
+
+    <h1>jQuery ReStable <span>v0.1.2</span></h1>
+
+    <p><strong>jQuery ReStable</strong> is a very simple and lightweight (~1Kb) jQuery plugin that make tables
+        responsive making them collapse into ul lists.</p>
+
+    <a href="https://github.com/micc83/ReStable" class="download_button">Download it on GitHub</a>
+
+    <p>To use it you just have to include jQuery and a copy of the plugin in your head or footer:</p>
+            <pre><code class="html">&#x3C;script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"&#x3E;&#x3C;/script&#x3E;
+&#x3C;script type="text/javascript" src="jquery.restable.min.js"&#x3E;&#x3C;/script&#x3E;
+&#x3C;link rel="stylesheet" href="jquery.restable.min.css"&#x3E;</code></pre>
+
+    <p>Let's say this is your table:</p>
             
-            <pre>&lt;table class="mytable"&gt;
+            <pre><code class="html">&lt;table class="mytable"&gt;
     &lt;thead&gt;
         &lt;tr&gt;
             &lt;td&gt;Period&lt;/td&gt;
@@ -66,163 +70,172 @@
             &lt;td&gt;90 €&lt;/td&gt;
         &lt;/tr&gt;
     &lt;/tbody&gt;
-&lt;/table&gt;</pre>
+&lt;/table&gt;</code></pre>
+
+    <p>Now the only thing to do is to trigger the action with:</p>
             
-            <p>Now the only thing to do is to trigger the action with:</p>
-            
-            <pre>$(window).ready(function () {
+            <pre><code class="js">$(window).ready(function () {
     $.ReStable();
-});</pre>
+});</code></pre>
 
-            <p>This will target automatically all the tables in the page but you can, off course, target one or more elements with:</p>
+    <p>This will target automatically all the tables in the page but you can, off course, target one or more elements
+        with:</p>
 
-            <pre>$(window).ready(function () {
+            <pre><code class="js">$(window).ready(function () {
     $('.mytable').ReStable();
-});</pre>
-            <p>If you need more control here's the plugin settings:</p>
-                    <pre>$('.mytable').ReStable({
+});</code></pre>
+    <p>If you need more control here's the plugin settings:</p>
+                    <pre><code class="js">$('.mytable').ReStable({
     rowHeaders: true, // Table has row headers?
     maxWidth: 480, // Size to which the table become responsive
-    keepHtml: false // Keep the html content of cells, only work with rowHeaders = false
-});</pre>
+    keepHtml: false // Keep the html content of cells
+});</code></pre>
+
+    <h2>Some examples</h2>
+
+    <span class="title">Example A - Responsive Pricelist Table (with row headers)</span>
+
+    <table id="table1">
+        <thead>
+        <tr>
+            <th>Period</th>
+            <th>Full Board</th>
+            <th>Half Board</th>
+            <th>Bed and Breakfast</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>01/10/12 - 02/10/12</td>
+            <td>20 €</td>
+            <td>30 €</td>
+            <td>40 €</td>
+        </tr>
+        <tr>
+            <td>03/10/12 - 04/10/12</td>
+            <td>40 €</td>
+            <td>50 €</td>
+            <td>60 €</td>
+        </tr>
+        <tr>
+            <td>05/10/12 - 06/10/12</td>
+            <td>70 €</td>
+            <td>80 €</td>
+            <td>90 €</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <pre><code class="js">$('#table1').ReStable();</code></pre>
+
+    <span class="title">Example B - Responsive Columns Table (without row headers)</span>
+
+    <table id="table2">
+        <thead>
+        <tr>
+            <td>Carbon</td>
+            <td>Hydrogen</td>
+            <td>Nitrogen</td>
+            <td>Oxygen</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>10</td>
+            <td>15</td>
+            <td>1</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>8</td>
+            <td>11</td>
+            <td>1</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>10</td>
+            <td>15</td>
+            <td>1</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>12</td>
+            <td>17</td>
+            <td>1</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>14</td>
+            <td>19</td>
+            <td>1</td>
+            <td>2</td>
+        </tr>
+        </tbody>
+    </table>
             
-            <h2>Some examples</h2>
-            
-            <span class="title">Example A - Responsive Pricelist Table (with row headers)</span>
-            
-            <table id="table1">
-                <thead>
-                    <tr>
-                        <th>Period</th>
-                        <th>Full Board</th>
-                        <th>Half Board</th>
-                        <th>Bed and Breakfast</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>01/10/12 - 02/10/12</td>
-                        <td>20 €</td>
-                        <td>30 €</td>
-                        <td>40 €</td>
-                    </tr>
-                    <tr>
-                        <td>03/10/12 - 04/10/12</td>
-                        <td>40 €</td>
-                        <td>50 €</td>
-                        <td>60 €</td>
-                    </tr>
-                    <tr>
-                        <td>05/10/12 - 06/10/12</td>
-                        <td>70 €</td>
-                        <td>80 €</td>
-                        <td>90 €</td>
-                    </tr>
-                </tbody>
-            </table>
-            
-            <pre>$('#table1').ReStable();</pre>
-            
-            <span class="title">Example B - Responsive Columns Table (without row headers)</span>
-            
-            <table id="table2">
-                <thead>
-                    <tr>
-                        <td>Carbon</td>
-                        <td>Hydrogen</td>
-                        <td>Nitrogen</td>
-                        <td>Oxygen</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>10</td>
-                        <td>15</td>
-                        <td>1</td>
-                        <td>0</td>
-                    </tr>
-                    <tr>
-                        <td>8</td>
-                        <td>11</td>
-                        <td>1</td>
-                        <td>2</td>
-                    </tr>
-                    <tr>
-                        <td>10</td>
-                        <td>15</td>
-                        <td>1</td>
-                        <td>1</td>
-                    </tr>
-                    <tr>
-                        <td>12</td>
-                        <td>17</td>
-                        <td>1</td>
-                        <td>1</td>
-                    </tr>
-                    <tr>
-                        <td>14</td>
-                        <td>19</td>
-                        <td>1</td>
-                        <td>2</td>
-                    </tr>
-                </tbody>
-            </table>
-            
-            <pre>$('#table2').ReStable({
+            <pre><code class="js">$('#table2').ReStable({
     rowHeaders : false
-});</pre>
+});</code></pre>
 
-            <span class="title">Example C - Responsive Columns Table with html support (without row headers)</span>
+    <span class="title">Example C - Responsive Columns Table with html support (without row headers)</span>
 
-            <table id="table3">
-                <thead>
-                    <tr>
-                        <th>Avatar</th>
-                        <th>Username</th>
-                        <th>Email</th>
-                        <th>Description</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><img src="http://www.placehold.it/400x400"></td>
-                        <td>Pinco</td>
-                        <td><a href="mailto:pinco@example.it">pinco@example.it</a></td>
-                        <td><p>Lorem ipsum dolor sit amet, consectetur <strong>adipiscing elit</strong>. Nulla molestie vulputate lectus, eu aliquam erat cursus ac. Etiam finibus <em>pellentesque turpis</em> vitae lacinia. Suspendisse lorem nibh, gravida aliquam arcu in, iaculis consectetur nisl. Pellentesque eu mattis sapien.</p></td>
-                    </tr>
-                    <tr>
-                        <td><img src="http://www.placehold.it/400x400"></td>
-                        <td>Pallino</td>
-                        <td><a href="mailto:pallino@example.it">pallino@example.it</a></td>
-                        <td><p>Lorem ipsum dolor sit amet, <strong>consectetur adipiscing</strong> elit.</p></td>
-                    </tr>
-                    <tr>
-                        <td><img src="http://www.placehold.it/400x400"></td>
-                        <td>Asdrubale</td>
-                        <td><a href="mailto:asdrubale@example.it">asdrubale@example.it</a></td>
-                        <td>
-                            <p>Nulla molestie vulputate lectus, eu aliquam erat cursus ac. Etiam finibus pellentesque turpis vitae lacinia.</p>
-                            <ul>
-                                <li>Element 1</li>
-                                <li>Element 2</li>
-                                <li>Element 3</li>
-                            </ul>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+    <table id="table3">
+        <thead>
+        <tr>
+            <th>Avatar</th>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td><img src="http://www.placehold.it/400x400/123456"></td>
+            <td>Pinco</td>
+            <td><a href="mailto:pinco@example.it">pinco@example.it</a></td>
+            <td><p>Lorem ipsum dolor sit amet, consectetur <strong>adipiscing elit</strong>. Nulla molestie vulputate
+                lectus, eu aliquam erat cursus ac. Etiam finibus <em>pellentesque turpis</em> vitae lacinia. Suspendisse
+                lorem nibh, gravida aliquam arcu in, iaculis consectetur nisl. Pellentesque eu mattis sapien.</p></td>
+        </tr>
+        <tr>
+            <td><img src="http://www.placehold.it/400x400/567567"></td>
+            <td>Pallino</td>
+            <td><a href="mailto:pallino@example.it">pallino@example.it</a></td>
+            <td><p>Lorem ipsum dolor sit amet, <strong>consectetur adipiscing</strong> elit.</p></td>
+        </tr>
+        <tr>
+            <td><img src="http://www.placehold.it/400x400"></td>
+            <td>Asdrubale</td>
+            <td><a href="mailto:asdrubale@example.it">asdrubale@example.it</a></td>
+            <td>
+                <p>Nulla molestie vulputate lectus, eu aliquam erat cursus ac. Etiam finibus pellentesque turpis vitae
+                    lacinia.</p>
+                <ul>
+                    <li>Element 1</li>
+                    <li>Element 2</li>
+                    <li>Element 3</li>
+                </ul>
+            </td>
+        </tr>
+        </tbody>
+    </table>
 
-            <pre>$('#table3').ReStable({
+            <pre><code class="js">$('#table3').ReStable({
     keepHtml : true,
     rowHeaders : false
-});</pre>
+});</code></pre>
 
-            <h2>Credits and contacts</h2>
-                    
-            <p><strong>ReStable</strong> has been made by <a href="http://codeb.it" target="_blank">me</a>. You can contact me at <a href="mailto:micc83@gmail.com">micc83@gmail.com</a> or <a href="https://twitter.com/Micc1983" target="_blank">twitter</a> for any issue or feauture request.</p>
-                    
-        
-        </div>
-        
-    </body>
+    <h2>Credits and contacts</h2>
+
+    <p>
+        <strong>ReStable</strong> has been made by <a href="http://codeb.it" target="_blank">me</a>.
+        You can contact me at <a href="mailto:micc83@gmail.com">micc83@gmail.com</a>
+        or <a href="https://twitter.com/Micc1983" target="_blank">twitter</a>
+        for any issue or feauture request.
+    </p>
+
+
+</div>
+
+</body>
 </html>

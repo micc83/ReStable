@@ -1,9 +1,9 @@
 /* Table */
 ul.tabletolist {
-	border-bottom: 2px solid #eee;font-size: 14px;margin:0 0 20px 0 !important;
+	border-bottom: 2px solid #eee;font-size: 14px;margin:0 0 20px 0;
 }
 /* Image */
-ul.tabletolist .row_data img {
+ul.tabletolist img {
     max-width: 100%;
 }
 /* Table with no row headers */
@@ -40,11 +40,11 @@ ul.tabletolist > li > ul > li:last-child {
 }
 /* Table row header */
 ul.tabletolist ul > li .row_headers {
-    font-size:12px;max-width: 40%;
+    font-size:12px;max-width: 40%;float:left;margin-right: 3%;
 }
 /* Table row data */
 ul.tabletolist ul > li .row_data {
-    float:right;font-weight:800;max-width: 60%;
+    float:right;font-weight:800;max-width: 57%;
 }
 /* Clearfix */
 ul.tabletolist > li > ul > li {*zoom: 1;}
