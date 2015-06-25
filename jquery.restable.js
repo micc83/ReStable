@@ -41,7 +41,11 @@
 
                     if (s.rowHeaders) {
                         if (!$result[value]) { $result[value] = {}; }
-                        $result[value][$row.children('td:nth-child(1)').text()] = $row.children('td:nth-child(' + (index + 1) + ')').text();
+                        if(s.keepHtml) {
+                            $result[value][$row.children('td:nth-child(1)').html()] = $row.children('td:nth-child(' + (index + 1) + ')').html();
+                        } else {
+                            $result[value][$row.children('td:nth-child(1)').text()] = $row.children('td:nth-child(' + (index + 1) + ')').text();
+                        }
                     } else {
                         if (!$result[$row_number]) { $result[$row_number] = {}; }
                         if (s.keepHtml){
