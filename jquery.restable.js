@@ -1,4 +1,3 @@
-/*! ReStable v0.1.1 by Alessandro Benoit */
 (function ($, window, i) {
 
     'use strict';
@@ -8,7 +7,8 @@
         // Settings
         var s = $.extend({
             rowHeaders: true,
-            maxWidth: 480
+            maxWidth: 480,
+            keepHtml: false
         }, options);
 
         // Build the responsive menu container and fill it with build_menu()
@@ -41,10 +41,18 @@
 
                     if (s.rowHeaders) {
                         if (!$result[value]) { $result[value] = {}; }
-                        $result[value][$row.children('td:nth-child(1)').text()] = $row.children('td:nth-child(' + (index + 1) + ')').text();
+                        if(s.keepHtml) {
+                            $result[value][$row.children('td:nth-child(1)').html()] = $row.children('td:nth-child(' + (index + 1) + ')').html();
+                        } else {
+                            $result[value][$row.children('td:nth-child(1)').text()] = $row.children('td:nth-child(' + (index + 1) + ')').text();
+                        }
                     } else {
                         if (!$result[$row_number]) { $result[$row_number] = {}; }
-                        $result[$row_number][value] = $row.children('td:nth-child(' + index + ')').text();
+                        if (s.keepHtml){
+                            $result[$row_number][value] = $row.children('td:nth-child(' + index + ')').html();
+                        } else {
+                            $result[$row_number][value] = $row.children('td:nth-child(' + index + ')').text();
+                        }
                     }
 
                 });
@@ -66,7 +74,8 @@
                 $.each(value, function (index, value) {
 
                     $('<li/>', {
-                        html: '<span class="row_headers">' + index + '</span> <span class="row_data">' + value + '</span>'
+                        'class': 'cf',
+                        html: '<span class="row_headers">' + index + '</span> <span class="row_data '+((s.keepHtml)?'html':'')+'">' + value + '</span>'
                     }).appendTo($myrowul);
 
                 });

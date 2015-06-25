@@ -59,7 +59,8 @@ If you need more control here's the plugin settings:
 
     $('.mytable').ReStable({
         rowHeaders: true, // Table has row headers?
-        maxWidth: 480 // Size to which the table become responsive
+        maxWidth: 480, // Size to which the table become responsive
+        keepHtml: false // Keep the html content of cells
     });
     
 ## Credits and contacts
