@@ -1,7 +1,7 @@
 jQuery ReStable 0.1.2
 ========
 
-**jQuery ReStable** is a very simple and lightweight (~1Kb) jQuery plugin that make tables responsive making them collapse into ul lists.You can find some examples in the included demo or [here](http://codeb.it/restable/).
+**jQuery ReStable** is a very simple and lightweight (~1Kb) jQuery plugin that make tables responsive making them collapse into ul lists.You can find some examples in the included demo.
 
 To use it you just have to include jQuery and a copy of the plugin in your head or footer:
 
@@ -73,4 +73,4 @@ $('.mytable').ReStable({
 
 ## Credits and contacts
 
-ReStable has been made by [me](http://codeb.it). You can contact me at micc83@gmail.com or [twitter](https://twitter.com/Micc1983) for any issue or feature request.
+ReStable has been made by [me](https://github.com/micc83). You can contact me at micc83@gmail.com or [twitter](https://twitter.com/Micc1983) for any issue or feature request.
